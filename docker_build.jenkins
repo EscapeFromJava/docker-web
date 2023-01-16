@@ -1,8 +1,10 @@
 pipeline {
+    agent any
+
     stages {
         stage('Start') {
             steps {
-                sh 'Start application'
+                echo 'Start echo'
             }
         }
     }
