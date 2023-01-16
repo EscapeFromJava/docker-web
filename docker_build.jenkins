@@ -5,6 +5,7 @@ pipeline {
         stage('Start') {
             steps {
                 echo 'Start echo'
+                powershell 'docker run -p 8888:8080 --name demo reskeartur/k8sweb'
             }
         }
     }
