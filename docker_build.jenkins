@@ -1,14 +1,8 @@
 pipeline {
-    agent { docker { image 'reskeartur/k8sweb' }}
     stages {
         stage('Start') {
             steps {
                 sh 'Start application'
-            }
-        }
-        stage('Run') {
-            steps {
-                powershell 'docker run -p 8888:8080 --name demo reskeartur/k8sweb'
             }
         }
     }
