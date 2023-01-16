@@ -1,11 +1,9 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage("Docker build") {
-            agent any
             steps {
                 echo " ============== Run container =================="
-                sh 'docker run -p 8888:8080 --name demo reskeartur/k8sweb'
             }
         }
     }
