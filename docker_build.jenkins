@@ -1,9 +1,22 @@
 pipeline {
     agent any
     stages {
+        stage("Start" {
+            steps {
+                echo " ============ Start ============ "
+                sh "ls"
+                sh "whoami"
+            }
+        }
         stage("Docker build") {
             steps {
                 echo " ============== Run container =================="
+            }
+        }
+        stage("Finish" {
+            steps {
+                echo " ============ Finish ============ "
+                sh "ls"
             }
         }
     }
