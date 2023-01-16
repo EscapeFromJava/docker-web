@@ -1,22 +1,14 @@
 pipeline {
-    agent any
+    agent { docker { image 'reskeartur/k8sweb' }}
     stages {
-        stage("Start" {
+        stage('Start') {
             steps {
-                echo " ============ Start ============ "
-                sh "ls"
-                sh "whoami"
+                powershell 'Start application'
             }
         }
-        stage("Docker build") {
+        stage('Run') {
             steps {
-                echo " ============== Run container =================="
-            }
-        }
-        stage("Finish" {
-            steps {
-                echo " ============ Finish ============ "
-                sh "ls"
+                powershell 'docker run -p 8888:8080 --name demo reskeartur/k8sweb'
             }
         }
     }
