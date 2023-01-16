@@ -1,7 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        dockerfile true
+    }
     stages {
-        stage("Build") {
+        stage("Deploy") {
             steps {
                 echo " ============== Start building image =================="
                 sh 'docker build -t demoapp:0.0.1 .'
