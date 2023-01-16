@@ -1,0 +1,11 @@
+version: "3"
+services:
+
+  hello-server:
+    build: server-hello/
+    ports:
+      - "8080:8080"
+  bye-server:
+    build: server-bye/
+    ports:
+      - "8081:8080"
