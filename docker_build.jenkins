@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Start') {
             steps {
-                powershell 'Start application'
+                sh 'Start application'
             }
         }
         stage('Run') {
